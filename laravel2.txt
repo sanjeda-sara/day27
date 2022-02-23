@@ -1,0 +1,83 @@
+-project always inside htdocs
+-root/parent must always be htdocs
+-adb country manager + foreigners
+-Route:: create object
+- :: operator
+-
+-basic of mvc
+	m->model		c->controller		v->view
+
+this is the lifecycl of mvc (ie, m-c-v)
+-model and controller are classes
+-model class works with data
+-controller class works with logic
+
+-view needs to fetch data from model to display the data, but it cannot directly bring/request model
+-so view requests to controller to fetch data from model and give it to view
+-controller requests model, so, model takes data from database and returns to controller
+-and finally, controller returns the requested data to view
+
+-to make the php class into controller, we extend it: class Example extends Controller 
+
+
+
+- we work with web.php, controller by createing class and using them
+
+//php artisan: command line/cli for laravel
+php artisan make:controller
+
+-------------------------------------------------------------------------------------
+<h1>
+    {{$firstName}} {{ $lastName }}
+</h1>
+this syntax works only for .blade.php files
+-------------------------------------------------------------------------------------
+route - 1. kon url er jonne kaaj korbe eta define kore
+	2. and ei url er jonne kon controller run hobe define kore
+view theke request korte ota aage route e jabe, then controller
+so basically route does all the sorting and decides which view will run when
+-------------------------------------------------------------------------------------
+compact method e variable or property er naam dite hoy
+-------------------------------------------------------------------------------------
+Route::get('/',[StudentController::class,'home'])->name('home');
+'/' root/url
+
+
+
+return view('home.home');
+home.home --> directory.file
+ie, home folder er bhitor home file
+'.' diye path change hoy ekhane-- '.' mane ager'/'
+-------------------------------------------------------------------------------------
+PUBLIC FOLDER IS THE ONLY ONE THAT CAN BE ACCESSED! SO ALL MULTIMEDIA MUST BE STORED HERE
+path always with respect to public folder
+RESOURCE:
+
+
+-------------------------------------------------------------------------------------
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+etay security nai so we wont be using this anymore,
+and follow th e blade syntax
+
+..ref="{{asset('/')}}ass...{{asset}} root e niye jacche
+ei asset method public porjonto nibe
+because amar base url public porjonto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
